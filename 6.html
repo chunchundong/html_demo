@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="commen.js"></script>
+	</head>
+	<body>
+		<input type="button" name="btn" id="btn" value="點擊按鈕，添加新的按鈕" />
+		<div id="dv" style="width: 400px;height: 200px;border: 1px solid rosybrown;">
+			
+		</div>
+		<script type="text/javascript">
+			function addEventListener(element,type,fn){
+				if(element.addEventListener){
+					element.addEventListener(type,fn,false);
+				}else if(element.attachEvent){
+					element.attachEvent("on"+type,fn);
+				}else{
+					element["on"+type] = fn;
+				}
+			}
+			addEventListener(my$("btn"),"click",function(){
+				console.log("1號");
+			});
+			addEventListener(my$("btn"),"click",function(){
+				console.log("2號");
+			});
+			addEventListener(my$("btn"),"click",function(){
+				console.log("3號");
+			});
+		</script>
+		<!--<input type="button" name="btn" id="btn" value="點擊按鈕，添加新的按鈕" />
+		<div id="dv" style="width: 400px;height: 200px;border: 1px solid rosybrown;">
+			
+		</div>
+		<script type="text/javascript">
+			my$("btn").onclick = function(){
+				if(!my$("dv").firstElementChild){
+					var inputObj = document.createElement("input");
+					inputObj.type = "button";
+					inputObj.value = "按钮";
+					inputObj.id = "btn2";
+					my$("dv").appendChild(inputObj);
+				}
+			}
+		</script>-->
+		<!--<input type="button" name="btn" id="btn" value="點擊按鈕，添加新的按鈕" />
+		<input type="button" name="btn" id="btn2" value="點擊按鈕，删除一个创建的按钮" />
+		<input type="button" name="btn" id="btn3" value="點擊按鈕，删除所有按钮" />
+		<div id="dv" style="width: 400px;height: 200px;border: 1px solid rosybrown;">
+			
+		</div>
+		<script type="text/javascript">
+			var i=0;
+			/*//向按钮前面继续插入按钮
+			 * my$("btn").onclick = function(){
+				i++;
+				var inputObj = document.createElement("input");
+				inputObj.type = "button";
+				inputObj.value = "按钮"+i;
+				my$("dv").appendChild(inputObj);
+			};*/
+			//向按钮后面继续插入按钮
+			my$("btn").onclick = function(){
+				i++;
+				var inputObj = document.createElement("input");
+				inputObj.type = "button";
+				inputObj.value = "按钮"+i;
+				my$("dv").insertBefore(inputObj,my$("dv").firstElementChild);
+			};
+			删除第一个按钮
+			my$("btn2").onclick = function(){
+				my$("dv").removeChild(my$("dv").firstElementChild);
+			}
+			//删除所有按钮
+			my$("btn3").onclick = function(){
+				while(my$("dv").firstElementChild){
+					my$("dv").removeChild(my$("dv").firstElementChild);
+				}
+			}
+		</script>-->
+		<!--input type="button" name="btn" id="btn" value="点击创建表格" />
+		<div id="dv" style="width: 200px;height: 300px;border: 1px solid purple;">
+			
+		</div>
+		<script type="text/javascript">
+			var arr = [
+				{name:"百度",href:"http://www.baidu.com"},
+				{name:"百度翻译",href:"https://fanyi.baidu.com"},
+				{name:"CSDN",href:"https://blog.csdn.net"},
+				{name:"ICfont",href:"https://www.iconfont.cn/"},
+				{name:"可视化",href:"http://www.bootcss.com"},
+				{name:"百度",href:"http://www.baidu.com"},
+			];
+			my$("btn").onclick = function(){
+				var tableObj = document.createElement("table");
+				my$("dv").appendChild(tableObj);
+				tableObj.border=1;
+				tableObj.cellPadding = 0;
+				tableObj.cellSpacing = 0;
+				for (var i=0;i<arr.length;i++) {
+					var trObj = document.createElement("tr");
+					tableObj.appendChild(trObj);
+					var td1rObj = document.createElement("td");
+					td1rObj.innerHTML = ""+arr[i].name;
+					trObj.appendChild(td1rObj);
+					var td2rObj = document.createElement("td");
+					td2rObj.innerHTML = "<a href="+arr[i].href+">"+arr[i].name+"</a>";
+					trObj.appendChild(td2rObj);
+				}
+				
+			};
+		</script>-->
+		<!--<input type="button" name="btn" id="btn" value="点击创建list" />
+		<div id="div1">
+			
+		</div>
+		<script type="text/javascript">
+			var kongfu = ["更换的护肤","如何导入桃花源","荣土文7已结","通过与合同编号","合同价软硬件","还是要就是个"];
+			my$("btn").onclick = function(){
+				var ulObj = document.createElement("ul");
+			  	my$("div1").appendChild(ulObj);
+			  	for (var i=0;i<kongfu.length;i++) {
+			  		var liObj = document.createElement("li");
+			  		liObj.innerHTML = kongfu[i];
+			  		ulObj.appendChild(liObj);
+			  		liObj.onmouseover = onmouseoverHandle;
+			  		liObj.onmouseout = onmouseoutHandle;
+			  	}
+			};
+			function onmouseoverHandle(){
+				this.style.backgroundColor = "blue";
+				this.style.color = "white";
+			}
+			function onmouseoutHandle(){
+				this.style.backgroundColor = "";
+				this.style.color = "";
+			}
+		</script>-->
+		<!--<input type="button" name="btn" id="btn" value="点击创建一个p" />
+		<div id="div1">
+			
+		</div>
+		<script type="text/javascript">
+			my$("btn").onclick = function(){
+				var pObj = document.createElement("p");
+				setinnerText(pObj,"我是调用了自定义函数创建的p");
+				my$("div1").appendChild(pObj);
+			};
+		</script>-->
+		<!--<input type="button" name="btn" id="btn" value="点击创建一个列表" />
+		<div id="div1"></div>
+		<script type="text/javascript">
+			my$("btn").onclick = function(){
+				var names = ["发生的若干","于今天还有","体会让人讨厌就","烦得很","东方红"];
+				var str = "<ul>";
+				for (var i=0;i<names.length;i++) {
+					str+="<li>"+names[i]+"</li>";
+				}
+				str+="</ul>"
+				my$("div1").innerHTML = str;
+				
+				var list = document.getElementsByTagName("li");
+				for (var j=0; j<list.length; j++) {
+					list[j].onmouseover = function(){
+						this.style.backgroundColor = "yellowgreen";
+					};
+					list[j].onmouseout = function(){
+						this.style.backgroundColor = "";
+					};
+				}
+			};
+		</script>-->
+		<!--<input type="button" name="btn" id="btn" value="点击按钮创建p" />
+		<div id="div1">
+			
+		</div>
+		<script type="text/javascript">
+			my$("btn").onclick = function(){
+//				document.write("<p>我是pp标签</p>");
+				my$("div1").innerHTML = "<p>我是pp标签2</p>";
+			};
+		</script>-->
+		
+		<!--<input type="button" name="btn" id="btn" value="点击隔行变色" />
+		<ul id="uu">
+			
+			<li>福达合金1</li>
+			<li>福达合金</li>
+			<li>福达合金</li>
+			<li>福达合金</li>
+			<li>福达合金</li>
+			<li>福达合金</li>
+			<li>福达合金</li>
+			<li>福达合金0</li>
+			
+			
+		</ul>
+		<script type="text/javascript">
+			function getFirstChildElement(element){
+				var list = element.firstElementChild;
+				if(list){
+					return list;
+				}else{
+					list = element.firstChild;
+					while(list&&list.nodeType!=1){
+						list = list.nextSibling;
+					}
+					return list;
+				}
+			}
+			function getLastChildElement(element){
+				var list = element.lastElementChild;
+				if(list){
+					return list;
+				}else{
+					list = element.lastChild;
+					while(list&&list.nodeType!=1){
+						list = list.previousSibling;
+					}
+					return list;
+				}
+			}
+			console.log(getFirstChildElement(my$("uu")));
+			console.log(getLastChildElement(my$("uu")));
+		</script>-->
+		
+		
+		<!--<script type="text/javascript">
+			
+			my$("btn").onclick = function(){
+				var count =0;
+				var list = my$("uu").childNodes;
+				for (var i=0; i <list.length;i++) {
+					if(list[i].nodeName == "LI" && list[i].nodeType == 1){
+						list[i].style.backgroundColor = count%2==0?"red":"yellow";
+						count++;
+					}
+				}
+			};
+		</script>-->
+		
+		<!--<input type="button" name="btn" id="btn" value="点击p标签背景色变色" />
+		<div id="div1">
+			<p>必定会是个</p>
+			<span>哪家客户大V就叫</span>
+			<p>必定会是个</p>
+			<ul id="ul1">
+				<li>积极耦合剂</li>
+				<li>积极耦合剂</li>
+				<li class="lis">积极耦合剂</li>
+				<li>积极耦合剂</li>
+				<li>积极耦合剂</li>
+				<li>积极耦合剂</li>
+			</ul>
+			<p>必定会是个</p>
+		</div>
+		
+		<script type="text/javascript">
+			var divObj = my$("div1");
+			var childP = divObj.childNodes;
+			my$("btn").onclick = function(){
+				for (var i=0;i<childP.length;i++) {
+					if(childP[i].nodeName =="P"&&childP[i].nodeType == 1){
+						childP[i].style.backgroundColor = "greenyellow";
+					}
+				}
+			};
+		</script>-->
+		<!--<script type="text/javascript">
+			var divObj = my$("div1");
+			console.log(divObj.parentNode);
+			console.log(divObj.parentElement);
+			console.log(divObj.childNodes);
+			console.log(divObj.children);
+			console.log(divObj.firstChild);
+			console.log(divObj.firstElementChild);
+			console.log(divObj.lastChild);
+			console.log(divObj.lastElementChild);
+			console.log(divObj.previousSibling);
+			console.log(divObj.previousElementSibling);
+			console.log(divObj.nextSibling);
+			console.log(divObj.nextElementSibling);
+		</script>-->
+	</body>
+</html>

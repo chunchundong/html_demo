@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--<input type="button" name="btn" id="btn" value="第一个" />
+		<input type="button" name="btn" id="btn2" value="第二个" />-->
+		<input type="button" name="btn3" id="btn3" value="后退" />
+		<script src="commen.js"></script>
+		<script type="text/javascript">
+			my$("btn3").onclick = function(){
+				window.history.back();
+			}
+			
+			/*function addEventListener(element,type,fn){
+				if(element.addEventListener){
+					element.addEventListener(type,fn,false);
+				}else if(element.attachEvent){
+					element.attachEvent(type,fn);
+				}else{
+					element["on"+type] = fn;
+				}
+			}
+			
+			function removeEventListener(element,type,fn){
+				if(element.removeEventListener){
+					element.removeEventListener(type,fn,false);
+				}else if(element.detachEvent()){
+					element.detachEvent(type,fn);
+				}else{
+					element["on"+type] = null;
+				}
+			}
+			function f1(){
+				console.log("科技丢是否会");
+			}
+			addEventListener(my$("btn"),"click",f1);
+			addEventListener(my$("btn2"),"click",function(){
+				removeEventListener(my$("btn"),"click",f1);
+			});*/
+			
+			/*my$("btn").onclick = function(){
+				console.log("我是第一个");
+			}
+			my$("btn2").onclick = function(){
+				my$("btn").onclick = null;
+			};*/
+			/*function f1(){
+				console.log("科技丢是否会");
+			}
+			
+			my$("btn").addEventListener("click",f1,false);
+			my$("btn2").addEventListener("click",function(){
+				my$("btn").removeEventListener("click",f1,false);
+			},false);*/
+		</script>
+	</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<textarea name="" rows="20" cols="20">
+			我是协议内容，你必须先阅读我才能注册哦
+		</textarea>
+		<input type="button" name="" id="btn" value="请先阅读协议(5)" disabled="disabled"/>
+		<script type="text/javascript">
+			var time = 5;
+			setInterval(function(){
+				var btn = document.getElementById("btn");
+				btn.value = "同意";
+				if(time>0){
+					time--;
+					btn.value = "请先阅读协议("+time+")";
+				}else{
+					btn.disabled = false;
+				}
+			},1000);
+		</script>
+	</body>
+</html>

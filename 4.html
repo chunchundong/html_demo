@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*.colors{
+				background-color: green;
+			}*/
+			/*div{
+				width: 100px;
+				height: 100px;
+				background-color: green;
+				float: left;
+				margin-right: 10px;
+				border: 2px solid green;
+			}*/
+			/*input{
+				color: gray;
+			}*/
+		</style>
+	</head>
+	<body>
+		<input type="text" name="btn" id="btn" value="" />
+		<script type="text/javascript">
+			document.getElementById("btn").onblur = function(){
+				if(this.value.length<=6||this.value.length>=12){
+					this.style.backgroundColor = "red";
+				}else{
+					this.style.backgroundColor = "green";
+				}
+			}
+		</script>
+		<!--<input type="text" name="" id="btn" value="请输入搜索内容" />
+		<script type="text/javascript">
+			var btn = document.getElementById("btn");
+			btn.onfocus = function(){
+				this.value = "";
+				this.style.color = "black";
+			};
+			btn.onblur = function(){
+				if(this.value.length==0){
+					this.value = "请输入搜索内容";
+					this.style.color = "gray";
+				}
+			};
+		</script>-->
+		<!--<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<script type="text/javascript">
+			var divObjs = document.getElementsByTagName("div");
+			for (var i=0;i<divObjs.length;i++) {
+				divObjs[i].onmouseover = function(){
+					this.style.border = "2px solid red";
+				};
+				divObjs[i].onmouseout = function(){
+					this.style.border = "";
+				};
+			}
+		</script>-->
+		
+		<!--<p class="colors">比较好估计</p>
+		<span>哦if多个即</span>
+		<span>会议提交</span>
+		<span class="colors">具有咖啡厅</span>
+		<span>工具房</span>
+		<span class="colors">更换非基督徒</span>
+		<input type="button" name="" id="btn" value="jfcbhj" />
+		<div class="colors" style="width: 100px;height: 100px;">
+			cbgnhm
+		</div>
+		<script src="commen.js"></script>
+		<script type="text/javascript">
+			my$("btn").onclick = function(){
+				var cls = document.getElementsByClassName("colors");
+				for (var i=0;i<cls.length;i++) {
+					cls[i].style.backgroundColor = "blue";
+				}
+			};
+		</script>-->
+		
+		<!--<input type="button" name="btn" id="btn" value="点击改变文本框内容" /><br />
+		<input type="text" name="name1" id="name1" value="你好" /><br />
+		<input type="text" name="name2" id="name1" value="你好" /><br />
+		<input type="text" name="name4" id="name1" value="你好" /><br />
+		<input type="text" name="name1" id="name1" value="你好" /><br />
+		<input type="text" name="name1" id="name1" value="你好" /><br />
+		<input type="text" name="name7" id="name1" value="你好" /><br />
+		<input type="text" name="name1" id="name1" value="你好" /><br />
+		<script src="commen.js"></script>
+		<script type="text/javascript">
+			my$("btn").onclick = function(){
+				var nameObjs = document.getElementsByName("name1");
+				for (var i=0;i<nameObjs.length;i++) {
+					nameObjs[i].value = "您好啊，被我修改了呢";
+				}
+			};
+			
+		</script>-->
+		<!--<ul>
+			<li>㔿孤鸿既高举</li>
+			<li>㔿孤鸿既高举</li>
+			<li>㔿孤鸿既高举</li>
+			<li>㔿孤鸿既高举</li>
+			<li>㔿孤鸿既高举</li>
+			<li>㔿孤鸿既高举</li>
+		</ul>
+		<script src="commen.js"></script>
+		<script type="text/javascript">
+			var list = document.getElementsByTagName("li");
+			for (var i=0;i<list.length;i++) {
+				list[i].onmouseover = function(){
+					this.style.backgroundColor = "yellowgreen";
+				};
+				list[i].onmouseout = function(){
+					this.style.backgroundColor = "";
+				};
+			}
+		</script>-->
+		
+		
+		<!--<input type="button" name="btn" " id="btn" value="隔行变色" />
+		<ul id="uu">
+			<li>忽悠</li>
+			<li>很久</li>
+			<li>刚硬护肩</li>
+			<li>欢聚一堂</li>
+			<li>火药库，</li>
+			<li>铝合金科目</li>
+			<li>据科技了</li>
+			<li>会继承</li>
+		</ul>
+		<script src="commen.js"></script>
+		<script type="text/javascript">
+			my$("btn").onclick = function(){
+				var liObjs = my$("uu").getElementsByTagName("li");
+				for (var i=0;i<liObjs.length;i++) {
+					liObjs[i].style.backgroundColor = i%2==0?"red":"yellow";
+				}
+			};
+		</script>-->
+	</body>
+</html>

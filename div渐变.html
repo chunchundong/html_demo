@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box{
+				width: 200px;
+				height: 200px;
+				background-color: deeppink;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			
+		</div>
+		<input type="button" name="btn" id="btn" value="变透明" />
+		<script type="text/javascript">
+			var opacity = 10;
+			var btn = document.getElementById("btn");
+			var box = document.getElementById("box");
+			btn.onclick = function(){
+				setInterval(function(){
+					if(opacity>0){
+						opacity--;
+						box.style.opacity = opacity/10;
+					}
+				},100);
+			};
+		</script>
+	</body>
+</html>

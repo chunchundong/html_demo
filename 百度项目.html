@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.active {
+				width: 160px;
+				border: 1px solid green;
+			}
+			.pstyle{
+				font-size: 12px;
+				padding: 0;
+				margin: 0;
+				padding-left: 5px;
+				padding-top: 5px;
+			}
+			.pstyle:hover{
+				background-color: yellow;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="box">
+			<input type="text" name="txt" id="txt" value="" />
+			<input type="button" name="btn" id="btn" value="搜索" />
+		</div>
+
+		<script src="commen.js"></script>
+		<script type="text/javascript">
+			var keywords = ["小管理会计后果可能吧", "小管理体会那部分进口国内及", "小客服登记管理", "弄的价格非结构化",
+				"弄导购给哦if回家打开", "我道具卡丁车"
+			];
+			my$("txt").onkeyup = function() {
+				//每次按下的时候首先删除下拉框div
+				if(my$("dv")){
+						my$("box").removeChild(my$("dv"));
+					}
+				
+				var val = my$("txt").value;
+				var newarr = [];
+				for(var i = 0; i < keywords.length; i++) {
+					if(keywords[i].indexOf(val) == 0) {
+						newarr.push(keywords[i]);
+					}
+				}
+
+				if(newarr.length == 0 || this.value.length == 0) {
+					if(my$("dv")){
+						my$("box").removeChild(my$("dv"));
+					}
+					return;
+				}
+				
+				//创建下拉框div
+				var divobj = document.createElement("div");
+				my$("box").appendChild(divobj);
+				divobj.id = "dv";
+				divobj.className = "active";
+				
+				//遍历临时数组，将每个数字放到上面的div中
+				for(var i=0; i<newarr.length;i++){
+					var pobj = document.createElement("p");
+					pobj.className = "pstyle";
+					my$("dv").appendChild(pobj);
+					setinnerText(pobj,newarr[i]);
+				}
+			};
+		</script>
+	</body>
+
+</html>

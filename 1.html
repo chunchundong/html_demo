@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+
+	<body>
+		<input type="button" name="btn" id="btn" value="点击修改p标签内容" />
+		<div id="div1">
+			<p>我是div1裏面的p</p>
+			<p>我是div1裏面的p</p>
+			<p>我是div1裏面的p</p>
+			<p>我是div1裏面的p</p>
+			<p>我是div1裏面的p</p>
+		</div>
+		<div id="div2">
+			<p>我是div2裏面的p</p>
+			<p>我是div2裏面的p</p>
+			<p>我是div2裏面的p</p>
+			<p>我是div2裏面的p</p>
+			<p>我是div2裏面的p</p>
+		</div>
+		<input type="button" name="btn1" id="btn1" value="点击修改图片的alt和title" />
+		<img src="img/11.jpg" alt="图片加载不出来时显示" title="鼠标移到图片上时显示的文字"/>
+		<script type="text/javascript">
+			document.getElementById("btn").onclick = function() {
+				var pObjs = document.getElementById("div1").getElementsByTagName("p");
+				for(var i = 0; i < pObjs.length; i++) {
+					pObjs[i].innerText = "div1裏面的p被修改了";
+				}
+			};
+			document.getElementById("btn1").onclick = function(){
+				var imgObjs = document.getElementsByTagName("img");
+				imgObjs[0].alt = "修改了";
+				imgObjs[0].title = "哈哈，被修改了";
+			};
+		</script>
+	</body>
+
+</html>

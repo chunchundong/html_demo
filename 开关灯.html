@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			/*.box{
+				width: 100px;
+				height: 100px;
+				background: darkred;
+				border: 2px solid greenyellow;
+			}*/
+			.black{
+				background-color: black;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" name="btn" id="btn" value="开/关灯" />
+		<script src="commen.js"></script>
+		<script type="text/javascript">
+			my$("btn").onclick = function(){
+				document.body.className = document.body.className=="black"?"":"black";
+			};
+		</script>
+		
+		<!--<input type="button" name="btn" id="btn" value="改变div样式" />
+		<input type="button" name="btn" id="btn" value="显示" />
+		<div id="div1"></div>
+		<script src="commen.js"></script>
+		<script type="text/javascript">
+			my$("btn").onclick = function(){
+//				my$("div1").className = "box";
+				if(my$("div1").className!="box"){
+					my$("div1").className = "box";
+					this.value = "隱藏";
+				}else{
+					my$("div1").className = "";
+					this.value = "顯示";
+				}
+			};
+		</script>-->
+		
+		<!--<img src="img/12.jpg" alt="" />
+		<img src="img/13.jpg" alt="" />
+		<img src="img/14.jpg" alt="" />
+		<img src="img/15.jpg" alt="" />
+		<img src="img/16.jpg" alt="" />
+		<script type="text/javascript">
+			var imgObjs = document.getElementsByTagName("img");
+			for (var i=0;i<imgObjs.length;i++) {
+				imgObjs[i].onclick = function(){
+					alert("我被点击了");
+				};
+			}
+		</script>-->
+		
+		<!--<input type="button" name="btn" id="btn" value="按钮" />
+		<script type="text/javascript">
+			var btn = document.getElementById("btn");
+			btn.onclick = function(){
+				this.value = "用this.改变成别的了哦";
+				this.type = "text";
+				this.id = "btn0";
+			};
+		</script>-->
+		
+		<!--<img src="img/12.jpg" id="img"/>
+		<script type="text/javascript">
+			var imgs = document.getElementById("img");
+			imgs.onclick = function(){
+				this.width = "300";
+				this.height = "200";
+			};
+		</script>-->
+		
+		<!--<input type="button" name="" id="" value="不显示" />
+		<input type="button" name="" id="" value="不显示" />
+		<input type="button" name="" id="" value="不显示" />
+		<input type="button" name="" id="" value="不显示" />
+		<input type="button" name="" id="" value="不显示" />
+		<script type="text/javascript">
+			var inpObjs = document.getElementsByTagName("input");
+			for (var i=0;i<inpObjs.length;i++) {
+				inpObjs[i].onclick = function(){
+					for (var j=0;j<inpObjs.length;j++) {
+						inpObjs[j].value = "不显示";
+					}
+					this.value = "显示";
+				};
+			}
+			
+		</script>-->
+		
+		<!--<input type="button" name="btn" id="btn" value="点击切换大图" />
+		<img src="img/1-small.jpg" id="imgs"/>
+		<script type="text/javascript">
+			function my$(id){
+				return document.getElementById(id);
+			}
+			
+			my$("btn").onclick = function(){
+				my$("imgs").src = "img/1.jpg";
+			};
+		</script>-->
+		
+		<!--<input type="button" name="" id="btn" value="选择性别" />
+		<input type="radio" name="sex" id="" value="男" />男
+		<input type="radio" name="sex" id="nv" value="女" />女
+		<input type="radio" name="sex" id="" value="半半" />半半
+		<script type="text/javascript">
+			function my$(id){
+				return document.getElementById(id);
+			}
+			my$("btn").onclick = function(){
+				my$("nv").checked = true;
+			};
+		</script>
+		<br />
+		<input type="button" name="df" id="btn1" value="选择爱好" />
+		<input type="checkbox" name="df" id="" value="男" />蓝旗
+		<input type="checkbox" name="df" id="ntv" value="女" />足球
+		<input type="checkbox" name="df" id="" value="半半" />乒乓球
+		<input type="checkbox" name="df" id="fg" value="半半" />网球
+		<input type="checkbox" name="df" id="" value="半半" />羽毛球
+		<script type="text/javascript">
+			function my$(id){
+				return document.getElementById(id);
+			}
+			my$("btn1").onclick = function(){
+				my$("ntv").checked = true;
+				my$("fg").checked = true;
+			};
+		</script>-->
+		
+		<!--<textarea name="文本" rows="10" cols="30" id="textare">
+			电话顾大局规范地，
+			的股份登记哦红绒花。
+			电饭锅hi东方裕i。
+			发那几个hi度㝉。
+		</textarea>
+		<input type="button" name="btn" id="btn" value="禁用" />
+		<script type="text/javascript">
+			function my$(id){
+				return document.getElementById(id);
+			}
+			my$("btn").onclick = function(){
+//				my$("textare").disabled = true;
+//				my$("textare").value = "文本内容被我修改了";
+				my$("textare").innerText = "文本内容被我修改了";
+			};
+		</script>-->
+		
+		<!--<input type="button" name="btn" id="btn" value="改变div样式" />
+		<div id="div1"></div>
+		<script src="commen.js"></script>
+		<script type="text/javascript">
+			my$("btn").onclick = function(){
+				my$("div1").style.width = "300px";
+				my$("div1").style.height = "150px";
+				my$("div1").style.backgroundColor = "yellowgreen";
+			};
+		</script>-->
+		
+		<!--<input type="button" name="btn" id="btn" value="隐藏" />
+		<div id="div1" style="width: 200px;height: 200px;background-color: black;"></div>
+		<script src="commen.js"></script>
+		<script type="text/javascript">
+			my$("btn").onclick = function(){
+				if(this.value == "隐藏"){
+					my$("div1").style.display = "none";
+					this.value = "显示";
+				}else if(this.value == "显示"){
+					my$("div1").style.display = "block";
+					this.value = "隐藏";
+				}
+			};
+		</script>-->
+		
+		
+	</body>
+</html>

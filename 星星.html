@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#box {
+				width: 600px;
+				height: 600px;
+				border: 2px solid red;
+				background-color: black;
+				position: relative;
+			}
+			
+			span {
+				font-size: 40px;
+				color: yellow;
+				position: absolute;
+			}
+		</style>
+		<script src="commen.js"></script>
+	</head>
+
+	<body>
+		<input type="button" name="btn1" id="btn1" value="亮起来" />
+		<div id="box">
+
+		</div>
+		<script type="text/javascript">
+			my$("btn1").onclick = function() {
+				setInterval(function() {
+					my$("box").innerHTML = "<span>☆</span>";
+					var x = parseInt(Math.random() * 600 + 1);
+					var y = parseInt(Math.random() * 600 + 1);
+					my$("box").firstChild.style.left = x + "px";
+					my$("box").firstChild.style.top = y + "px";
+				}, 10);
+
+			}
+		</script>
+	</body>
+
+</html>

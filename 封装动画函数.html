@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#box{
+				width: 200px;
+				height: 100px;
+				background-color: green;
+				margin-top: 10px;
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="button" name="btn1" id="btn1" value="走到400处" />
+		<input type="button" name="btn2" id="btn2" value="走到800处" />
+		<div id="box">
+			
+		</div>
+		<script type="text/javascript">
+			var btn1 = document.getElementById("btn1");
+			var btn2 = document.getElementById("btn2");
+			var box = document.getElementById("box");
+			btn1.onclick = function(){
+				animal(box,400);
+			}
+			btn2.onclick = function(){
+				animal(box,800);
+			}
+			function animal(ele,target){
+				//先清理定时器
+				clearInterval(ele.timeId);
+				ele.timeId = setInterval(function(){
+					var current = ele.offsetLeft;
+					var step = 9;
+					step = current < target ? step : -step;
+					if(Math.abs(current-target) >= Math.abs(step)){
+						current += step;
+						ele.style.left = current + "px";
+					}else{
+						clearInterval(ele.timeId);
+						ele.style.left = target + "px";
+					}
+				},10);
+			}
+		</script>
+	</body>
+</html>

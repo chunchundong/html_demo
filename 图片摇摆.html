@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			img{
+				width: 400px;
+				height: 300px;
+			}
+			div{
+				position: absolute;
+			}
+		</style>
+		<script src="commen.js"></script>
+	</head>
+	<body>
+		<input type="button" name="btn1" id="btn1" value="摇起来" />
+		<input type="button" name="btn2" id="btn2" value="停止" />
+		<div id="box">
+			<img src="img/12.jpg"/>
+			<img src="img/13.jpg"/>
+		</div>
+		<script type="text/javascript">
+			var timeId;
+			my$("btn1").onclick = function(){
+				timeId = setInterval(function(){
+					var x = parseInt(Math.random()*100+1); 
+					var y = parseInt(Math.random()*100+1); 
+					my$("box").style.left = x + "px";
+					my$("box").style.top = y + "px";
+				},50);
+			}
+			my$("btn2").onclick = function(){
+				clearInterval(timeId);
+			}
+		</script>
+	</body>
+</html>

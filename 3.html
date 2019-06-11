@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<a href="img/1.jpg" id="a"><img src="img/1-small.jpg" alt=""/></a>
+		<img src="" id="big"/>
+		<script type="text/javascript">
+			document.getElementById("a").onclick = function(){
+				document.getElementById("big").src = this.href;
+				return false;
+			};
+		</script>
+		
+		<!--<a href="https://www.baidu.com" id="a">百度</a>
+		<script type="text/javascript">
+			document.getElementById("a").onclick = function(){
+				alert("我要阻止你跳转");
+				return false;
+			};
+		</script>-->
+		
+		<!--<input type="button" name="btn" id="btn" value="点击切换背景色" />
+		<ul id="uu">
+			<li>是不努力的</li>
+			<li>是不努力的</li>
+			<li>是不努力的</li>
+			<li>是不努力的</li>
+			<li>是不努力的</li>
+		</ul>
+		<script type="text/javascript">
+			function my$(id){
+				return document.getElementById(id);
+			}
+			
+			my$("btn").onclick = function(){
+				my$("uu").style.backgroundColor = "yellowgreen";
+			};
+		</script>-->
+	</body>
+</html>

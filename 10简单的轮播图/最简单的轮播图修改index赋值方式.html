@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			* {
+				margin: 0;
+				padding: 0
+			}
+			
+			ul {
+				list-style: none
+			}
+			
+			img {
+				vertical-align: top
+			}
+			
+			.box {
+				width: 730px;
+				height: 454px;
+				margin: 100px auto;
+				padding: 5px;
+				border: 1px solid #ccc;
+			}
+			
+			.inner {
+				width: 730px;
+				height: 454px;
+				background-color: pink;
+				overflow: hidden;
+				position: relative;
+			}
+			
+			.inner ul {
+				width: 1000%;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			
+			.inner li {
+				float: left;
+			}
+			
+			.square {
+				position: absolute;
+				right: 10px;
+				bottom: 10px;
+			}
+			
+			.square span {
+				display: inline-block;
+				width: 16px;
+				height: 16px;
+				background-color: #fff;
+				text-align: center;
+				line-height: 16px;
+				cursor: pointer;
+			}
+			
+			.square span.current {
+				background-color: orangered;
+				color: #fff;
+			}
+			#focusD {
+      display: none;
+    }
+
+    #focusD span {
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      left: 5px;
+      top: 50%;
+      margin-top: -20px;
+      background: #000;
+      cursor: pointer;
+      line-height: 40px;
+      text-align: center;
+      font-weight: bold;
+      font-family: '黑体';
+      font-size: 30px;
+      color: #fff;
+      opacity: 0.3;
+      border: 1px solid #fff;
+    }
+
+    #focusD #right {
+      right: 5px;
+      left: auto;
+    }
+		</style>
+	</head>
+
+	<body>
+		
+		<div class="box" id="box">
+			<div class="inner">
+				<!--相框-->
+				<ul>
+					<li>
+						<a href="#"><img src="images/1.jpg" alt="" /></a>
+					</li>
+					<li>
+						<a href="#"><img src="images/2.jpg" alt="" /></a>
+					</li>
+					<li>
+						<a href="#"><img src="images/3.jpg" alt="" /></a>
+					</li>
+					<li>
+						<a href="#"><img src="images/4.jpg" alt="" /></a>
+					</li>
+					<li>
+						<a href="#"><img src="images/5.jpg" alt="" /></a>
+					</li>
+					<li>
+						<a href="#"><img src="images/6.jpg" alt="" /></a>
+					</li>
+					<li>
+						<a href="#"><img src="images/1.jpg" alt="" /></a>
+					</li>
+				</ul>
+				<div class="square">
+					<span class="current">1</span>
+					<span>2</span>
+					<span>3</span>
+					<span>4</span>
+					<span>5</span>
+					<span>6</span>
+				</div>
+				<div id="focusD"><span id="left">&lt;</span><span id="right">&gt;</span>
+			</div>
+		</div>
+		<script src="common.js"></script>
+		<script type="text/javascript">
+			//得到最大的盒子
+			var boxObj = my$("box");
+			//获取相框
+			var innerObj = box.children[0];
+			//获取相框的宽度
+			var imgWidth = innerObj.offsetWidth;
+			//获取ul
+			var ulObj = innerObj.children[0];
+			//获取所有的span标签
+			var spanObj = innerObj.children[1].children;
+			//获取左右按钮所在div
+			var focusD = my$("focusD");
+			
+			var current = 0;
+			//自动切换图片
+			var timeId = setInterval(f1,20);
+			
+			function f1(){
+				current -=10;
+				if(current<-imgWidth*spanObj.length){
+					ulObj.style.left = 0 + "px";
+					current = 0;
+				}else{
+					ulObj.style.left = current + "px";
+				}
+			}
+			boxObj.onmouseover = function(){
+				clearInterval(timeId);
+			}
+			boxObj.onmouseout = function(){
+				timeId = setInterval(f1,20);
+			}
+			
+			/*//点击切换图片
+			boxObj.onmouseover = function(){
+				focusD.style.display = "block";
+			}
+			
+			boxObj.onmouseout = function(){
+				focusD.style.display = "none";
+			}
+			
+			var index = 0;
+			my$("right").onclick = function(){
+				if(index<spanObj.length-1){
+					index++;
+					animal(ulObj,-imgWidth*index);
+				}
+				
+			}
+			
+			my$("left").onclick = function(){
+				if(index>0){
+					index--;
+					animal(ulObj,-imgWidth*index);
+				}
+				
+			}
+
+			//鼠标经过小圆点切换图片
+			for(var i = 0; i < spanObj.length; i++) {
+				spanObj[i].setAttribute("index",i);
+				spanObj[i].onmouseover = function() {
+					for(var j = 0; j < spanObj.length; j++) {
+						spanObj[j].className = "";
+					}
+					this.className = "current";
+					var index = this.getAttribute("index");
+					animal(ulObj,-imgWidth*index);
+				}
+
+			}
+			
+			function animal(ele,target){
+				//先清理定时器
+				clearInterval(ele.timeId);
+				ele.timeId = setInterval(function(){
+					var current = ele.offsetLeft;
+					var step = 9;
+					step = current < target ? step : -step;
+					if(Math.abs(current-target) >= Math.abs(step)){
+						current += step;
+						ele.style.left = current + "px";
+					}else{
+						clearInterval(ele.timeId);
+						ele.style.left = target + "px";
+					}
+				},10);
+			} */
+		</script>
+	</body>
+
+</html>

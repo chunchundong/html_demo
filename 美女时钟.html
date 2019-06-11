@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<img src="meimei/00_00.jpg"/ id="image">
+		<script type="text/javascript">
+			function f1(){
+				var data = new Date();
+				var hours = data.getHours();
+				var seconds = data.getSeconds();
+				hours = hours>=10?hours:"0"+hours;
+				seconds = seconds>=10?seconds:"0"+seconds;
+				document.getElementById("image").src = "meimei/"+hours+"_"+seconds+".jpg"
+			}
+			f1();
+			setInterval(f1,1000);
+		</script>
+	</body>
+</html>

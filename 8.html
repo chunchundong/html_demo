@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="commen.js">
+			
+		</script>
+	</head>
+	<body>
+		
+		<!--<input type="button" name="" id="btn1" value="跳转" />
+		<input type="button" name="" id="btn2" value="前进" />-->
+		
+		<input type="button" name="btn" id="btn" value="停止" />
+		<script type="text/javascript">
+			
+			var timeId = setInterval(function(){
+				alert("hello");
+			},1000);
+			my$("btn").onclick = function(){
+				clearInterval(timeId);
+			}
+			
+			/*//判断浏览器所在的系统平台类型
+			console.log(window.navigator.platform);
+			//判断用户浏览器的类型
+			console.log(window.navigator.userAgent);*/
+			
+			
+			/*my$("btn1").onclick = function(){
+				window.location.href = "7.html";
+			}
+			my$("btn2").onclick = function(){
+				window.history.forward();
+			}*/	
+			
+			
+			/*//得到地址栏上#及后面的内容
+			console.log(window.location.hash);
+			//主机名及端口号
+			console.log(window.location.host);
+			//主机名
+			console.log(window.location.hostname);
+			//当前页面的相对路径
+			console.log(window.location.pathname);
+			//端口号
+			console.log(window.location.port);
+			//协议
+			console.log(window.location.protocol);
+			//地址栏上的搜索的内容
+			console.log(window.location.search);*/
+		</script>
+	</body>
+</html>
